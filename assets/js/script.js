@@ -1,4 +1,34 @@
 //
+//my variables
+
+//my questions
+let quizQuestions = [
+    {
+        question: "What keywords do you use to declare a variable in JavaScript?",
+        answers: ["let", "const", "var", "all of the above"],
+        correctAnswer: "all of the above"
+    },
+    {
+        question:"Which operator compares both value and type of data?",
+        answers: ["==", "", "===", ""],
+        correctAnswer: "==="
+    },
+    {
+        question:"Which HTML element is used to link the JavaScript file?",
+        answers: ["<js>", "<javascript>", "<script>", "none of the above"],
+        correctAnswer: "<script>"
+    },
+    {
+        question: "How do you add a comment in JavaScript",
+        answers: ["//comment", "'comment'", "<comment>", "<!--comment--!>"],
+        correctAnswer: "//comment"
+    },
+    {
+        question: "How do you write an array?",
+        answers: ["let numbers=['1', '2']", "", "", ""],
+        correctAnswer: "",
+    }
+]
 //start button > timer starts (visual in right corner)
 // start button -- code that shows first question
 //timer made with setInterval?
