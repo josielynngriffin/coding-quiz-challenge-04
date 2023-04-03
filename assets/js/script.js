@@ -1,5 +1,19 @@
 //
-//my variables
+//my selector variables
+let intro= document.getElementById('intro');
+console.log('intro:' + intro);
+let introBlurb = document.querySelector('.intro--blurb');
+//introBlurb.setAttribute = ['class', 'hidden'];
+//introBlurb.classList.add('hidden');
+let startButton = document.getElementById('start-btn');
+startButton.textContent= 'Start';
+startButton.style.color= 'white';
+let questionContainer = document.getElementById('question-container');
+//let introContainer = intro.childNodes;
+let introContainer = intro.children;
+console.log('introContainer: ' + introContainer);
+
+//introContainer.setAttribute = ('class', 'hidden');
 
 //my questions
 let quizQuestions = [
@@ -29,6 +43,23 @@ let quizQuestions = [
         correctAnswer: "",
     }
 ]
+
+//Function to hide the introduction screen
+function hideStartScreen() {
+    //intro.classList.add('hidden');
+    intro.style.display = 'none';
+    for(var i=0; i<introContainer.length; i++) {
+         //introContainer[i].style.display = 'none';
+         //introContainer[i].setAttribute = ['class', 'hidden'];
+         introContainer[i].classList.add('hidden');
+}
+}
+function startGame() {
+    hideStartScreen()
+    questionContainer.classList.remove('hidden');
+}
+//Add event listener to start button, hides the intro
+startButton.addEventListener("click", startGame);
 //start button > timer starts (visual in right corner)
 // start button -- code that shows first question
 //timer made with setInterval?
