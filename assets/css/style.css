@@ -45,17 +45,17 @@ h3 {
     justify-items:center;
 }
 /* Intro styling begins*/
-#intro {
+#intro{
     display:flex;
     flex-direction:column;
     /*flex-flow: column wrap;*/
     align-items:center;
     margin:auto;
     /*align-items:center;*/
-    /*display:none;*/
 }
-.intro--title, .intro--blurb, #start-btn {
+.intro--title, .intro--blurb, #start-btn, #question {
     margin:12px;
+    text-align:center;
 }
 .intro--blurb {
     font-family:var(--font-montserrat);
@@ -63,17 +63,34 @@ h3 {
 }
 #start-btn {
     padding:20px 50px;
-    border-radius:10px;
-    background-color:var(--color-darkGreen);
-    color:var(--color-white);
-    font-size:17px;
     margin-top:10px;
     
 }
-#start-btn:hover {
+#start-btn:hover, #answer-btn:hover {
     opacity:75%;
 }
 
 .hidden {
     display:none;
+}
+/*Shared styling*/
+#start-btn, #answer-btn {
+    border-radius:10px;
+    background-color:var(--color-darkGreen);
+    color:var(--color-white);
+    font-size:17px;
+}
+/* Question screen styling begins */
+#question {
+    display:flex;
+    flex-direction:column;
+    /*flex-flow: column wrap;*/
+    align-items:center;
+    margin:auto;
+    /*align-items:center;*/
+}
+/*repetitive but was causing issues with javascript*/
+#answer-btn {
+    padding:25px 55px;
+    margin:10px;
 }
