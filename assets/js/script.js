@@ -12,6 +12,7 @@ let questionContainer = document.getElementById('question-container');
 //let introContainer = intro.childNodes;
 let introContainer = intro.children;
 console.log('introContainer: ' + introContainer);
+let timerContainer = document.getElementById('timer-container');
 
 //introContainer.setAttribute = ('class', 'hidden');
 
@@ -54,9 +55,26 @@ function hideStartScreen() {
          introContainer[i].classList.add('hidden');
 }
 }
+let secondsLeft=60;
+let timerContent = document.createElement('p');
+timerContent.classList.add('timer--align')
+function setTime() {
+    let timerInterval = setInterval(function(){
+        secondsLeft--;
+        timerContainer.appendChild(timerContent).textContent = secondsLeft;
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            //function to end game, log and store score
+            console.log("time's up");
+        }
+    }, 1000);
+}
 function startGame() {
     hideStartScreen()
-    questionContainer.classList.remove('hidden');
+    questionContainer.style.display = 'flex';
+    //questionContainer.classList.remove('hidden');
+    setTime();
 }
 //Add event listener to start button, hides the intro
 startButton.addEventListener("click", startGame);
