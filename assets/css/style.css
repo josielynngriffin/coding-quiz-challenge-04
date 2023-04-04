@@ -81,7 +81,7 @@ h3 {
     font-size:17px;
 }
 /* Question screen styling begins */
-#question-container {
+#question-container, #endgame-container {
     /*display:flex;*/
     flex-direction:column;
     /*flex-flow: column wrap;*/
@@ -115,4 +115,20 @@ h3 {
 /*timer styling*/
 .timer--align {
     text-align:center;
+}
+/*End game / Save Screen styling */
+.endgame-title, #score-content, #initials {
+    text-align:center;
+    margin:10px;
+}
+#save-button {
+    padding:20px 40px;
+    background-color:var(--color-darkGreen);
+    color:var(--color-white);
+}
+#save-button, #initials {
+    border-radius:5px;
+}
+#initials {
+    padding:10px 20px;
 }
