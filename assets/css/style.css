@@ -81,16 +81,38 @@ h3 {
     font-size:17px;
 }
 /* Question screen styling begins */
-#question {
-    display:flex;
+#question-container {
+    /*display:flex;*/
     flex-direction:column;
     /*flex-flow: column wrap;*/
     align-items:center;
+    justify-content:center;
     margin:auto;
     /*align-items:center;*/
 }
+#timer-container {
+    align-self:end;
+}
 /*repetitive but was causing issues with javascript*/
+#answers-container {
+    /*display:flex;
+    flex:row wrap;
+    flex: 1 40%;
+    flex-basis:40%;*/
+    display:grid;
+    grid-template-columns: repeat(2, auto);
+    gap:5px;
+}
+@media only screen and (max-width:500px) {
+    #answers-container {
+        grid-template-columns: auto;
+    }
+    }
 #answer-btn {
     padding:25px 55px;
     margin:10px;
+}
+/*timer styling*/
+.timer--align {
+    text-align:center;
 }
