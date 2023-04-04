@@ -17,6 +17,11 @@ let answerButton = document.getElementById('answer-btn');
 //introContainer.setAttribute = ('class', 'hidden');
 let questionContent = document.getElementById('question-content');
 let answersContainer= document.getElementById('answers-container');
+let endgameContainer = document.getElementById('endgame-container');
+let saveButton= document.getElementById('save-button');
+let scoreContent= document.getElementById('score-content');
+let inputName = document.getElementById('initials');
+let scoresContainer= document.getElementById('scorescreen-container');
 //questionContent.textContent = "test";
 //my questions
 let quizQuestions = [
@@ -68,6 +73,7 @@ function setTime() {
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
+            finalScreen();
             //function to end game, log and store score
             console.log("time's up");
         }
@@ -75,14 +81,7 @@ function setTime() {
 }
 
 //function to start game
-function startGame() {
-    hideStartScreen()
-    questionContainer.style.display = 'flex';
-    //questionContainer.classList.remove('hidden');
-    setTime();
-    questionCycle();
-    //timer to iterate through questions object/array (questionCycle)
-}
+
 //Add event listener to start button, hides the intro
 startButton.addEventListener("click", startGame);
 
@@ -95,10 +94,12 @@ let score=0;
 function questionCycle() {
     if (currentQuestionI === finalQuestion) {
         //end function for final score
+        finalScreen();
         return;
     } else if (secondsLeft === 0) {
     //end function for final score
     clearInterval(timerInterval);
+    finalScreen();
     } else {
     //function to iterate through question array
     answersContainer.innerHTML= "";
@@ -127,12 +128,27 @@ function questionCycle() {
             }
             currentQuestionI++;
             questionCycle();
-            let totalScore = score;
-            console.log("total score = " + totalScore);
         })
     })
 
 }}
+console.log(score);
+function startGame() {
+    hideStartScreen()
+    questionContainer.style.display = 'flex';
+    //questionContainer.classList.remove('hidden');
+    setTime();
+    questionCycle();
+    //timer to iterate through questions object/array (questionCycle)
+}
+function finalScreen() {
+    questionContainer.style.display= 'none';
+    endgameContainer.style.display= 'flex';
+    localStorage.setItem('score', score);
+    console.log("total score = " + score);
+    scoreContent.textContent = "Your last saved score is " + localStorage.getItem('score') + " points!";
+}
+
 //console.log("total score = " + totalScore);
 //start button > timer starts (visual in right corner)
 // start button -- code that shows first question
