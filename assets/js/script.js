@@ -148,6 +148,18 @@ function finalScreen() {
     console.log("total score = " + score);
     scoreContent.textContent = "Your last saved score is " + localStorage.getItem('score') + " points!";
 }
+function saveScore(event) {
+    event.preventDefault();
+    endgameContainer.style.display='none';
+    scoresContainer.style.display = 'flex';
+    localStorage.setItem('score', score);
+    localStorage.setItem('name', inputName.value);
+    let savedScore = document.createElement('p');
+    savedScore.classList.add('savedScore');
+    savedScore.textContent = localStorage.getItem('name') + " - " + localStorage.getItem('score');
+    scoresContainer.appendChild(savedScore);
+}
+saveButton.addEventListener("click", saveScore);
 
 //console.log("total score = " + totalScore);
 //start button > timer starts (visual in right corner)
