@@ -81,7 +81,7 @@ h3 {
     font-size:17px;
 }
 /* Question screen styling begins */
-#question-container, #endgame-container {
+#question-container, #endgame-container, #scorescreen-container {
     /*display:flex;*/
     flex-direction:column;
     /*flex-flow: column wrap;*/
@@ -131,4 +131,12 @@ h3 {
 }
 #initials {
     padding:10px 20px;
+}
+/* Score Screen Styling begins */
+.savedScore {
+    margin:10px;
+    background-color:var(--color-lightGreen);
+    color:var(--color-white);
+    padding:10px 20px;
+    border-radius:10px;
 }
