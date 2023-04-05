@@ -9,6 +9,9 @@ This project helped me to better understand setInterval timers, localStorage, an
 ## Usage
 To play the quiz, begin by clicking the start button. The quiz will bring you from question to question as you choose your answers, and at the end you can log your name with your score. There is a ten second penalty for incorrect answers. To play again, refresh the web page!
 ## Screenshots
-
+![A screenshot of the start page](./assets/img/codingscreenshotstart.png)
+![A screenshot of a sample question page](./assets/img/codingscreenshotquestion.png)
+![A screenshot of where to save your score](./assets/img/codingscreenshotsave.png)
+![A screenshot of logged scores](./assets/img/codingscreenshotscorelist.png)
 ## Link to Live, Deployed Page
 [Coding Quiz](https://josielynngriffin.github.io/coding-quiz-challenge-04/index.html)
